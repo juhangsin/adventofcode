@@ -1,16 +1,14 @@
 const fs = require('fs');
 const input = fs.readFileSync('./input.txt', 'utf-8').split('\n')
 
-let currentX = 0;
-let currentY = 0;
 const totalLength = input[0].length;
 
 function slide(moveRight, moveDown) {
     
+    let currentX = moveRight;
+    let currentY = moveDown;
     let tree = 0;
-    currentX = moveRight;
-    currentY = moveDown;
-    
+        
     do {
         if (input[currentY][currentX] === "#") {
             tree++;
